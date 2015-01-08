@@ -1,0 +1,7 @@
+{
+  "name": "bale-kalendar",
+  "version": "0.0.1",
+  "main": "./kalendar_server",
+  "dependencies": {},
+  "private": "true"
+}
