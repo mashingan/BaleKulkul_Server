@@ -1,13 +1,30 @@
 var EPOCH = 1900;
 var PATTERN = /(\d+)[^\/|-]/g;
 
+function iskabisat(year) {
+  if(year % 4 === 0){
+    if(year % 100 === 0 && year % 400 !== 0)
+      return false;
+    else
+      return true;
+  }
+  return false;
+}
+
 /*
  * kabisats:
  *   Calculating how many kabisats' years in time span between
  *   given year and primordial year, Y0
  */
 function kabisats(year) {
-  return Math.round((year-EPOCH) / 4);
+  var kabn = Math.floor((year-EPOCH) / 4);
+  var kabcount = 0;
+  for(var i=0; i<kabn; i++) {
+    var y = EPOCH + i * 4;
+    if(iskabisat(y))
+      kabcount++;
+  }
+  return kabcount;
 }
 
 function calcdays(date) {
@@ -68,4 +85,3 @@ function bali_calendar(date) {
 }
 
 module.exports.bali_calendar = bali_calendar;
-module.exports.PATTERN = PATTERN;

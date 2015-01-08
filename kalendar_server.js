@@ -6,7 +6,6 @@ var http = require('http'),
 var PORT = 3000;
 
 var server = http.createServer(function(req, res){
-  //console.log(req.headers);
   res.setEncoding = 'utf8';
   if(req.method == 'GET' && req.url == '/'){
     serve(__dirname + '/index.html', 'text/html')
@@ -19,17 +18,6 @@ var server = http.createServer(function(req, res){
     req.on('data', function(chunk) {
       body += chunk;
     });
-    /*
-    req.on('end', function() {
-      res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.end('<p>Content-Type: ' + req.headers['content-type'] +
-        '</p>' +
-        '</p>Data:</p><pre>' + body + '</pre>');
-    });
-    req.on('data', function (chunk) {
-      body += chunk;
-    });
-    */
     req.on('end', function() {
       var day = qs.parse(body).date;
       var daytype = JSON.stringify(calendar.bali_calendar(day));
