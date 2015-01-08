@@ -56,3 +56,16 @@ function wuku(day) {
   idx = (Math.floor((day-1) / 7) + 12) % 30;
   return wukulist[idx];
 }
+
+function bali_calendar(date) {
+  var day = calcdays(date);
+  return {
+    Trawatara: trawatara(day),
+    Pancawara: pancawara(day),
+    Saptawara: saptawara(day),
+    Wuku: wuku(day)
+  };
+}
+
+module.exports.bali_calendar = bali_calendar;
+module.exports.PATTERN = PATTERN;
