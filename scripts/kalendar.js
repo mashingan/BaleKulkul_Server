@@ -23,9 +23,9 @@ function calcdays(date) {
   }
   var extraday = [0, 2, 4, 6, 7, 9, 11];
   var dayarr = date.match(PATTERN);
-  var day = parseInt(dayarr[0]);
+  var day = parseInt(dayarr[2]);
   var month = parseInt(dayarr[1]);
-  var year = parseInt(dayarr[2]);
+  var year = parseInt(dayarr[0]);
   var days = day + months(month) + (year - EPOCH) * 365 +
     kabisats(year);
   return days;
