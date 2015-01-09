@@ -8,7 +8,7 @@ window.onload = function() {
   */
   var button = document.querySelector('.button');
   var listin = document.querySelectorAll('output');
-  var outlis = ['Trawatara', 'Pancawara', 'Saptawara', 'Wuku'];
+  var outlis = ['Triwara', 'Pancawara', 'Saptawara', 'Wuku'];
   var date = document.querySelector(".date").value;
   /*
   var supportDate = checkInput("date");

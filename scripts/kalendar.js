@@ -48,7 +48,7 @@ function calcdays(date) {
   return days;
 }
 
-function trawatara(day) {
+function triwara(day) {
   return ['Pasah', 'Beteng', 'Kajeng'][(day-1) % 3];
 }
 
@@ -77,7 +77,7 @@ function wuku(day) {
 function bali_calendar(date) {
   var day = calcdays(date);
   return {
-    Trawatara: trawatara(day),
+    Triwara: triwara(day),
     Pancawara: pancawara(day),
     Saptawara: saptawara(day),
     Wuku: wuku(day)
