@@ -3,7 +3,7 @@ var http = require('http'),
     qs = require('querystring'),
     calendar = require('./scripts/kalendar');
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 var server = http.createServer(function(req, res){
   res.setEncoding = 'utf8';
